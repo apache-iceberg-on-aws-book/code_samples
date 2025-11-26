@@ -1,0 +1,4 @@
+Rules=[
+ RowCount < 10,
+ Completeness "credit_limit" > 0.8
+ ]

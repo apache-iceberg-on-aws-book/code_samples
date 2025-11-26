@@ -1,0 +1,8 @@
+sourceFormat: HUDI
+targetFormats:
+  - ICEBERG
+datasets:
+  - tableBasePath: s3://my_datalake/mydb/sales_transactions_hudi_v1/
+    tableName: sales_transactions_hudi_v1_iceberg
+    namespace: mydb
+    partitionSpec: country:VALUE

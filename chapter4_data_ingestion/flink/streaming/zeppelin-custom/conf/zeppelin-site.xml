@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>zeppelin.server.addr</name>
+    <value>0.0.0.0</value>
+    <description>Server address</description>
+  </property>
+
+  <property>
+    <name>zeppelin.server.port</name>
+    <value>8080</value>
+    <description>Server port.</description>
+  </property>
+
+  <property>
+    <name>zeppelin.interpreter.dir</name>
+    <value>interpreter</value>
+    <description>Interpreter directory</description>
+  </property>
+
+  <property>
+    <name>zeppelin.interpreter.config.path</name>
+    <value>/opt/zeppelin/conf/interpreter.json</value>
+    <description>Path to interpreter configuration</description>
+  </property>
+</configuration>

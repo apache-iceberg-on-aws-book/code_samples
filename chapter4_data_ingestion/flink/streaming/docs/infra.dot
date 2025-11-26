@@ -1,0 +1,53 @@
+digraph INFRA {
+  rankdir=TB;
+  node [color="black", fillcolor="#E6E6E6", height=1, style="filled,bold,rounded", fontname="Arial"];
+  
+  // Data Flow Layer
+  subgraph cluster_dataflow {
+    label="Data Flow";
+    style=filled;
+    fillcolor="#F0F8FF";
+    
+    "kafka-producer" [label="Event Producer\n(Python/Faker)", shape=rectangle, fillcolor="#98FB98"];
+    "kafka" [label="Apache Kafka\n(Message Broker)", shape=rectangle, fillcolor="#FFD700"];
+    "jobmanager" [label="Flink JobManager\n(Coordinator)", shape=rectangle, fillcolor="#87CEEB"];
+    "taskmanager" [label="Flink TaskManager\n(Processing)", shape=rectangle, fillcolor="#87CEEB"];
+    "rest" [label="Iceberg Catalog\n(Metadata)", shape=rectangle, fillcolor="#DDA0DD"];
+    "minio" [label="MinIO Storage\n(Data Lake)", shape=cylinder, fillcolor="#F0E68C"];
+  }
+  
+  // Infrastructure Layer
+  subgraph cluster_infra {
+    label="Infrastructure";
+    style=filled;
+    fillcolor="#FFF8DC";
+    
+    "minio-init" [label="MinIO Init\n(Setup)", shape=rectangle, fillcolor="#D3D3D3"];
+  }
+  
+  // Monitoring Layer
+  subgraph cluster_monitoring {
+    label="Monitoring & Analytics";
+    style=filled;
+    fillcolor="#F5F5DC";
+    
+    "zeppelin" [label="Apache Zeppelin\n(Analytics)", shape=rectangle, fillcolor="#FFB6C1"];
+    "kafka-ui" [label="Kafka UI\n(Monitoring)", shape=rectangle, fillcolor="#FFB6C1"];
+  }
+  
+  // Data Flow Connections
+  "kafka-producer" -> "kafka" [label="events", color="#FF4500", fontcolor="#FF4500"];
+  "kafka" -> "jobmanager" [label="consume", color="#FF4500", fontcolor="#FF4500"];
+  "jobmanager" -> "taskmanager" [label="coordinate", color="#4169E1", fontcolor="#4169E1"];
+  "taskmanager" -> "rest" [label="metadata", color="#4169E1", fontcolor="#4169E1"];
+  "taskmanager" -> "minio" [label="store data", color="#4169E1", fontcolor="#4169E1"];
+  "rest" -> "minio" [label="catalog", color="#9932CC", fontcolor="#9932CC"];
+  
+  // Infrastructure Connections
+  "minio-init" -> "minio" [label="setup", color="#808080", fontcolor="#808080"];
+  
+  // Monitoring Connections
+  "zeppelin" -> "jobmanager" [label="query", color="#FF69B4", fontcolor="#FF69B4"];
+  "zeppelin" -> "rest" [label="catalog", color="#FF69B4", fontcolor="#FF69B4"];
+  "kafka-ui" -> "kafka" [label="monitor", color="#FF69B4", fontcolor="#FF69B4"];
+}

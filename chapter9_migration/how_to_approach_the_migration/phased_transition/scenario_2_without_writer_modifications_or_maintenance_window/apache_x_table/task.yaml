@@ -1,0 +1,75 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'XTable Sync Task and Scheduling Stack'
+
+Parameters:
+  InfraStackName:
+    Type: String
+    Description: Name of the infrastructure stack
+  ScheduleExpression:
+    Type: String
+    Default: rate(1 hour)
+  ImageTag:
+    Type: String
+    Default: latest
+
+Resources:
+  TaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: xtable-sync
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - FARGATE
+      Cpu: '1024'
+      Memory: '4096'
+      TaskRoleArn:
+        Fn::ImportValue: !Sub ${InfraStackName}-TaskRoleArn
+      ExecutionRoleArn:
+        Fn::ImportValue: !Sub ${InfraStackName}-TaskExecutionRoleArn
+      ContainerDefinitions:
+        - Name: xtable-sync
+          Image: !Sub
+            - "${RepoUri}:${Tag}"
+            - RepoUri:
+                Fn::ImportValue: !Sub ${InfraStackName}-EcrRepositoryUri
+              Tag: !Ref ImageTag
+          Essential: true
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group:
+                Fn::ImportValue: !Sub ${InfraStackName}-LogGroupName
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: ecs
+
+  EventRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: xtable-sync-hourly
+      ScheduleExpression: !Ref ScheduleExpression
+      State: ENABLED
+      Targets:
+        - Id: RunECSTask
+          Arn:
+            Fn::ImportValue: !Sub ${InfraStackName}-ClusterArn
+          RoleArn:
+            Fn::ImportValue: !Sub ${InfraStackName}-EventBridgeRoleArn
+          EcsParameters:
+            TaskDefinitionArn: !Ref TaskDefinition
+            TaskCount: 1
+            LaunchType: FARGATE
+            NetworkConfiguration:
+              AwsVpcConfiguration:
+                Subnets:
+                  - Fn::ImportValue: !Sub ${InfraStackName}-PublicSubnetId
+                SecurityGroups:
+                  - Fn::ImportValue: !Sub ${InfraStackName}-SecurityGroupId
+                AssignPublicIp: ENABLED
+
+Outputs:
+  TaskDefinitionArn:
+    Description: Task Definition ARN
+    Value: !Ref TaskDefinition
+  EventRuleArn:
+    Description: EventBridge Rule ARN
+    Value: !GetAtt EventRule.Arn
