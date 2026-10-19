@@ -1,4 +1,4 @@
-# Chapter 6 - Operations and Monitoring
+# Chapter 4 - Best Practices and Operations
 
 This chapter covers operational aspects of managing Apache Iceberg tables in production environments. It demonstrates monitoring strategies, maintenance operations, and troubleshooting techniques for reliable data lake operations.
 

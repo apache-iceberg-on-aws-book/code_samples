@@ -1,4 +1,4 @@
-# Chapter 8 - Apache Iceberg REST Catalog Integration and Interoperability
+# Chapter 5 - Apache Iceberg REST Catalog Integration and Interoperability
 This chapter explores Apache Iceberg REST Catalog integration and demonstrates interoperability between different compute engines. It shows how to work with Iceberg tables across multiple platforms and services.
 
 ## 8.4 Connecting to Iceberg Tables in General S3 Buckets with Glue Catalog IRC

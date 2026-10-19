@@ -15,17 +15,39 @@ The book is designed to be deeply practical. Every chapter comes with runnable e
 
 This repository functions as a companion lab environment to the book.
 
+### Book Editions
+
+This repository holds the code for two editions of the book. The chapter order changed between them, so pick the version that matches your copy:
+
+| Edition | Branch / Tag | Download |
+|---|---|---|
+| Second edition (current, default branch) | [`book_v2`](https://github.com/apache-iceberg-on-aws-book/code_samples/tree/book_v2) | [Browse](https://github.com/apache-iceberg-on-aws-book/code_samples/tree/book_v2) |
+| First edition | [`book_v1`](https://github.com/apache-iceberg-on-aws-book/code_samples/tree/book_v1) | [Release `book_v1` (zip)](https://github.com/apache-iceberg-on-aws-book/code_samples/releases/tag/book_v1) |
+
+If you own the first edition, use the [`book_v1`](https://github.com/apache-iceberg-on-aws-book/code_samples/tree/book_v1) tag. Its chapter folders follow the original numbering.
+
 ### Repository Structure
 
-The repository mirrors the structure of the book.
+The repository mirrors the structure of the book (second edition).
 Each chapter has its own directory containing the examples, scripts, configurations, or notebooks referenced in that chapter.
 
-- [Chapter 3 - Working with Apache Iceberg Tables in AWS](chapter3_aws/)
-- [Chapter 4 - Data Ingestion Patterns](chapter4_data_ingestion/)
-- [Chapter 6 - Operations and Monitoring](chapter6_operations_monitoring/)
-- [Chapter 8 - Apache Iceberg REST Catalog integration and Interoperability](chapter8_rest_catalog/)
-- [Chapter 9 - Migrate to Apache Iceberg](chapter9_migration/)
-- [Chapter 10 - Advanced Topics](chapter10_advanced/)
+- [Chapter 2 - Working with Apache Iceberg Tables in AWS](chapter2_aws/)
+- [Chapter 3 - Data Ingestion Patterns](chapter3_data_ingestion/)
+- [Chapter 4 - Best Practices and Operations](chapter4_best_practices_operations/)
+- [Chapter 5 - Apache Iceberg REST Catalog integration and Interoperability](chapter5_rest_catalog/)
+- [Chapter 6 - Migrate to Apache Iceberg](chapter6_migration/)
+- [Chapter 7 - Advanced Topics](chapter7_advanced/)
+
+#### Chapter mapping between editions
+
+| Second edition (`book_v2`) | First edition (`book_v1`) |
+|---|---|
+| `chapter2_aws` | `chapter3_aws` |
+| `chapter3_data_ingestion` | `chapter4_data_ingestion` |
+| `chapter4_best_practices_operations` | `chapter6_operations_monitoring` |
+| `chapter5_rest_catalog` | `chapter8_rest_catalog` |
+| `chapter6_migration` | `chapter9_migration` |
+| `chapter7_advanced` | `chapter10_advanced` |
 
 ### Contributions
 
