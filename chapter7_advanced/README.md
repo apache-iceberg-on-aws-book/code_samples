@@ -1,4 +1,4 @@
-# Chapter 7 - Advanced Topics
+# Chapter 7 – Advanced Topics
 
 This chapter explores advanced Apache Iceberg features and use cases for experienced practitioners. It covers complex scenarios, advanced configurations, and cutting-edge techniques for maximizing Iceberg's capabilities.
 

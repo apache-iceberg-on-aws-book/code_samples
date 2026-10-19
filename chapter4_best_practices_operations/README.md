@@ -1,4 +1,4 @@
-# Chapter 4 - Best Practices and Operations
+# Chapter 4 – Best Practices for Optimizing Apache Iceberg Workloads
 
 This chapter covers operational aspects of managing Apache Iceberg tables in production environments. It demonstrates monitoring strategies, maintenance operations, and troubleshooting techniques for reliable data lake operations.
 

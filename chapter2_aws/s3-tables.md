@@ -72,7 +72,7 @@ aws s3tables put-table-maintenance-configuration \
     }'
 ```
 
-> **📖 Production Operations**: For comprehensive S3 Tables optimization configuration, cost analysis, and advanced maintenance settings, see [Chapter 4 - S3 Tables Optimization Configuration](../chapter4_best_practices_operations/s3-tables-optimization-configuration.md).
+> **📖 Production Operations**: For comprehensive S3 Tables optimization configuration, cost analysis, and advanced maintenance settings, see [Chapter 4 – S3 Tables Optimization Configuration](../chapter4_best_practices_operations/s3-tables-optimization-configuration.md).
 
 ## Step 3: Set Up Athena Integration
 

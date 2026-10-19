@@ -1,4 +1,4 @@
-# Chapter 6 - Migrate to Apache Iceberg
+# Chapter 6 – Migrate to Apache Iceberg
 
 This chapter provides comprehensive guidance on migrating existing tables to Apache Iceberg. It covers migration strategies, tools, and best practices for transitioning from legacy formats to Iceberg tables.
 

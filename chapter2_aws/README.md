@@ -1,4 +1,4 @@
-# Chapter 2 - Working with Apache Iceberg Tables in AWS
+# Chapter 2 – Working with Apache Iceberg in AWS
 
 This chapter demonstrates how to create, manage, and query Apache Iceberg tables within the AWS ecosystem using various AWS services and open source libraries including DuckDB, Daft, and Java API libraries.
 

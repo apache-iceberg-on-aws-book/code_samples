@@ -31,12 +31,13 @@ If you own the first edition, use the [`book_v1`](https://github.com/apache-iceb
 The repository mirrors the structure of the book (second edition).
 Each chapter has its own directory containing the examples, scripts, configurations, or notebooks referenced in that chapter.
 
-- [Chapter 2 - Working with Apache Iceberg Tables in AWS](chapter2_aws/)
-- [Chapter 3 - Data Ingestion Patterns](chapter3_data_ingestion/)
-- [Chapter 4 - Best Practices and Operations](chapter4_best_practices_operations/)
-- [Chapter 5 - Apache Iceberg REST Catalog integration and Interoperability](chapter5_rest_catalog/)
-- [Chapter 6 - Migrate to Apache Iceberg](chapter6_migration/)
-- [Chapter 7 - Advanced Topics](chapter7_advanced/)
+- Chapter 1 – Apache Iceberg Foundation (conceptual chapter, no code samples)
+- [Chapter 2 – Working with Apache Iceberg in AWS](chapter2_aws/)
+- [Chapter 3 – Data Ingestion Patterns / Reference Architectures](chapter3_data_ingestion/)
+- [Chapter 4 – Best Practices for Optimizing Apache Iceberg Workloads](chapter4_best_practices_operations/)
+- [Chapter 5 – Apache Iceberg REST Catalog integration and Interoperability](chapter5_rest_catalog/)
+- [Chapter 6 – Migrate to Apache Iceberg](chapter6_migration/)
+- [Chapter 7 – Advanced Topics](chapter7_advanced/)
 
 #### Chapter mapping between editions
 

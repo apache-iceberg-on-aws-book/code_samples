@@ -322,7 +322,7 @@ WHERE file_size_in_bytes < 50 * 1024 * 1024  -- Files smaller than 50MB
 ORDER BY file_size_in_bytes; 
 ```
 
-> **📖 Advanced Analysis**: For comprehensive metadata analysis, file-level optimization queries, and performance monitoring, see [Chapter 4 - Athena Maintenance Commands](../chapter4_best_practices_operations/athena-maintenance-commands.md).
+> **📖 Advanced Analysis**: For comprehensive metadata analysis, file-level optimization queries, and performance monitoring, see [Chapter 4 – Athena Maintenance Commands](../chapter4_best_practices_operations/athena-maintenance-commands.md).
 
 ## Step 8: Branch and Tag operations
 Athena supports querying specific Iceberg branches and tags using the $refs metadata table to identify snapshot IDs. While Athena doesn't directly support branch creation (which requires Spark), it can query data from existing branches and tags created by other engines.

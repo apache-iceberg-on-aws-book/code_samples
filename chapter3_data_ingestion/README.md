@@ -1,4 +1,4 @@
-# Chapter 3 - Data Ingestion Patterns / Reference Architectures
+# Chapter 3 – Data Ingestion Patterns / Reference Architectures
 
 This chapter covers various data ingestion patterns and reference architectures for Apache Iceberg. It demonstrates best practices for streaming and batch data ingestion into Iceberg tables using AWS services and different Open Source technologies.
 
